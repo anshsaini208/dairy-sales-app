@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Dairy Sales Manager</title>
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="manifest" href="manifest.json">
+
+    <meta name="theme-color" content="#2563eb">
+</head>
+
+<body>
+
+<header>
+    <h1>🥛 Dairy Sales Manager</h1>
+</header>
+
+<main>
+
+    <!-- DASHBOARD -->
+
+    <section>
+
+        <h2>📊 Dashboard</h2>
+
+        <div class="dashboard">
+
+            <div class="card">
+                <h3>👥 Customers</h3>
+                <p id="totalCustomers">0</p>
+            </div>
+
+            <div class="card">
+                <h3>🥛 Today's Milk</h3>
+                <p id="todayMilk">0 L</p>
+            </div>
+
+            <div class="card">
+                <h3>💰 Today's Sales</h3>
+                <p id="todaySales">₹0</p>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- MILK PRICE -->
+
+    <section>
+
+        <h2>💰 Milk Price</h2>
+
+        <div class="card">
+
+            <label>Price Per Liter (₹)</label>
+
+            <input
+                type="number"
+                id="milkPrice"
+                placeholder="Example: 60">
+
+            <button onclick="saveMilkPrice()">
+                Save Price
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- ADD CUSTOMER -->
+
+    <section>
+
+        <h2>👤 Add Customer</h2>
+
+        <input
+            type="text"
+            id="customerName"
+            placeholder="Customer Name">
+
+        <input
+            type="tel"
+            id="customerPhone"
+            placeholder="Phone Number">
+
+        <button onclick="addCustomer()">
+            + Add Customer
+        </button>
+
+    </section>
+
+
+    <!-- CUSTOMER LIST -->
+
+    <section>
+
+        <h2>👥 Customers</h2>
+
+        <div id="customerList"></div>
+
+    </section>
+
+
+    <!-- DAILY SALES -->
+
+    <section>
+
+        <h2>🥛 Daily Milk Sales</h2>
+
+        <div class="card">
+
+            <label>Select Date</label>
+
+            <input
+                type="date"
+                id="saleDate">
+
+        </div>
+
+        <div id="dailySalesList"></div>
+
+    </section>
+
+    <!-- CUSTOMER SALES HISTORY -->
+
+    <section>
+
+        <h2>📜 Customer Sales History</h2>
+
+        <div class="card">
+
+            <label>Select Customer</label>
+
+            <select id="historyCustomer">
+                <option value="">Choose a customer</option>
+            </select>
+
+        </div>
+
+        <div id="customerHistoryList"></div>
+
+    </section>
+
+    <!-- MONTHLY BILLING -->
+
+<section>
+
+    <h2>📅 Monthly Bills</h2>
+
+    <div class="card">
+
+        <label>Select Month</label>
+
+        <input
+            type="month"
+            id="billingMonth">
+
+    </div>
+
+    <div id="monthlyBillsList"></div>
+
+</section>
+
+
+<!-- PAYMENTS -->
+
+<section>
+
+    <h2>💳 Customer Payments</h2>
+
+    <div class="card">
+
+        <label>Select Customer</label>
+
+        <select id="paymentCustomer"></select>
+
+
+        <label>Payment Amount (₹)</label>
+
+        <input
+            type="number"
+            id="paymentAmount"
+            placeholder="Enter amount">
+
+
+        <label>Payment Date</label>
+
+        <input
+            type="date"
+            id="paymentDate">
+
+
+        <button onclick="addPayment()">
+
+            💳 Add Payment
+
+        </button>
+
+    </div>
+
+
+    <div id="paymentHistory"></div>
+
+</section>
+</main>
+
+<script src="script.js"></script>
+
+</body>
+</html>
