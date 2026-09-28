@@ -107,14 +107,14 @@ function addCustomer() {
 
     const name =
         document.getElementById("customerName")
-        .value
-        .trim();
+            .value
+            .trim();
 
 
     const phone =
         document.getElementById("customerPhone")
-        .value
-        .trim();
+            .value
+            .trim();
 
 
     if (name === "") {
@@ -222,6 +222,10 @@ function displayDailySales() {
 
                     <button onclick="saveSale(${customer.id}, 500)">
                         500 ml
+                    </button>
+
+                    <button onclick="saveSale(${customer.id}, 750)">
+                        750 ml
                     </button>
 
                     <button onclick="saveSale(${customer.id}, 1000)">
@@ -394,10 +398,10 @@ function displayCustomerHistory() {
         customerHistoryList.innerHTML += `
             <div class="history-card">
                 <h3>📅 ${new Date(date + "T00:00:00").toLocaleDateString("en-GB", {
-                    day: "2-digit",
-                    month: "short",
-                    year: "numeric"
-                })}</h3>
+            day: "2-digit",
+            month: "short",
+            year: "numeric"
+        })}</h3>
                 <p>🥛 ${(saleData.quantity / 1000).toFixed(2)} L</p>
                 <p>💰 ₹${saleData.amount.toFixed(2)}</p>
             </div>
@@ -438,10 +442,10 @@ function displayPaymentHistory() {
             <div class="history-card">
                 <h3>👤 ${customerMap[payment.customerId] || "Unknown Customer"}</h3>
                 <p>📅 ${new Date(payment.date + "T00:00:00").toLocaleDateString("en-GB", {
-                    day: "2-digit",
-                    month: "short",
-                    year: "numeric"
-                })}</p>
+            day: "2-digit",
+            month: "short",
+            year: "numeric"
+        })}</p>
                 <p>💳 ₹${Number(payment.amount).toFixed(2)}</p>
             </div>
         `;
@@ -750,9 +754,9 @@ function saveSale(customerId, quantity) {
 
         quantity === 0
 
-        ? "❌ No Sale"
+            ? "❌ No Sale"
 
-        : `🥛 ${quantity} ml | ₹${amount}`;
+            : `🥛 ${quantity} ml | ₹${amount}`;
 
 
     displayCustomerHistory();
